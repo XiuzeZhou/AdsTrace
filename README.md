@@ -20,17 +20,17 @@ This repository contains the dataset tools for **AdsTrace** benchmark dataset, a
 
 ### Create Environment
 
-1) Create Environment
+1). Create Environment
 ```bash
 conda create -n torch_2.4 python=3.10
 ```
 
-2) Activate
+2). Activate
 ```bash
 conda activate torch_2.4
 ```
 
-3) Install dependencies
+3). Install dependencies
 **Torch** (torch>=2.4):
 ```bash
 pip install torch==2.4.1 torchvision torchaudio tensorboard --index-url https://download.pytorch.org/whl/cu121
@@ -44,11 +44,11 @@ pip install -r requirements.txt
 ### 2. Data Preparation
 
 #### Dataset
-1) Download the **AdsTrace** dataset from Hugging Face: https://huggingface.co/datasets/Xiuze/AdsTrace
+1). Download the **AdsTrace** dataset from Hugging Face: https://huggingface.co/datasets/Xiuze/AdsTrace
 
-2) Unzip the .zip files
+2). Unzip the .zip files
 
-3) Organize the data as follows:
+3). Organize the data as follows:
 ```
 ├── datasets/AdsTrace/
 |   ├── audios_16k/
@@ -63,13 +63,13 @@ pip install -r requirements.txt
 
 #### Pre-trained Models
 
-1) Download the pretrained models (Swin, BERT, Wav2Vec) Hugging Face
+1). Download the pretrained models (Swin, BERT, Wav2Vec) Hugging Face
 
 - **Swin-B**: [timm/swin_base_patch4_window7_224.ms_in1k](https://huggingface.co/timm/swin_base_patch4_window7_224.ms_in1k)
 - **BERT-base-chinese**: [google-bert/bert-base-chinese](https://huggingface.co/google-bert/bert-base-chinese)
 - **Wav2Vec**: [jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn](https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn)
 
-2) Organize the data as follows:
+2). Organize the data as follows:
 ```
 ├── pretrained_models/
 |   ├── bert-base-chinese/
