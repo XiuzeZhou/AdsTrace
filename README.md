@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-orange)](LICENSE)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red)](https://pytorch.org/)
 
-This repository contains the dataset tools for **AdsTrace** benchmark dataset, and the implementation of **TAMAN**. TAMAN aligns hierarchical marketing metadata (Text + Audio) with temporal visual tokens to predict second-by-second engagement (iCTR) and global business metrics (ROI/CVR).
+This repository contains the dataset tools for [**AdsTrace**](https://huggingface.co/datasets/Xiuze/AdsTrace) benchmark dataset, and the implementation of **TAMAN**. TAMAN aligns hierarchical marketing metadata (Text + Audio) with temporal visual tokens to predict second-by-second engagement (iCTR) and global business metrics (ROI/CVR).
 
 ## 💎AdsTrace Dataset
 <p align="center">
