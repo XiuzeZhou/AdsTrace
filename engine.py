@@ -25,7 +25,7 @@ def train_one_epoch(model, loader, optimizer, lambda_loss, writer, epoch):
 
             batch_ictr_loss = torch.tensor(0.0, device=f.device)
             batch_glob_loss = torch.tensor(0.0, device=f.device)
-            # 只有当 p_ictr 存在时才算 iCTR Loss
+
             if p_ictr is not None:
                 bce_raw = F.binary_cross_entropy_with_logits(p_ictr, target_ictr, reduction='none')
                 mask = torch.zeros_like(p_ictr)
@@ -33,18 +33,13 @@ def train_one_epoch(model, loader, optimizer, lambda_loss, writer, epoch):
                     mask[idx, :t] = 1.0
                 batch_ictr_loss = (bce_raw * mask).sum() / (mask.sum() + 1e-8)
             
-            # 只有当 p_global 存在时才算 Global Loss
             if p_global is not None:
                 pred_roi, pred_cvr = p_global[:, 0], p_global[:, 1]
                 target_roi, target_cvr = target_global[:, 0], target_global[:, 1]
-                #loss_roi = F.huber_loss(pred_roi, target_roi, delta=0.1, reduction='mean')
-                #loss_cvr = F.huber_loss(pred_cvr, target_cvr, delta=0.005, reduction='mean')
-                #loss_cvr = F.huber_loss(pred_cvr * 100, target_cvr * 100, delta=1.0, reduction='mean')
                 loss_roi = F.mse_loss(pred_roi, target_roi)
                 loss_cvr = F.mse_loss(pred_cvr, target_cvr)
                 batch_glob_loss = 0.01 * loss_roi + loss_cvr
             
-            # 总 Loss (用于反向传播)
             loss = batch_glob_loss + lambda_loss * batch_ictr_loss
         
         scaler.scale(loss).backward()
@@ -53,19 +48,16 @@ def train_one_epoch(model, loader, optimizer, lambda_loss, writer, epoch):
         scaler.step(optimizer)
         scaler.update()
         
-        # 统计
         total_l += loss.item()
         ictr_l += batch_ictr_loss.item()
         glob_l += batch_glob_loss.item()
         
-        # 在 tqdm 进度条实时查看
         pbar.set_postfix({
             'L': f"{loss.item():.4f}", 
             'iCTR': f"{batch_ictr_loss.item():.4f}", 
             'ROI': f"{batch_glob_loss.item():.4f}"
         })
 
-    # 返回平均值
     num_batches = len(loader)
     return total_l / num_batches, ictr_l / num_batches, glob_l / num_batches
 
@@ -105,8 +97,6 @@ def evaluate(model, loader, lambda_loss, threshold):
                 # Global Loss (ROI + CVR*100)
                 pred_roi, pred_cvr = p_global[:, 0], p_global[:, 1]
                 target_roi, target_cvr = target_global[:, 0], target_global[:, 1]
-                #loss_roi = F.huber_loss(pred_roi, target_roi, delta=0.1, reduction='mean')
-                #loss_cvr = F.huber_loss(pred_cvr, target_cvr, delta=0.005, reduction='mean')
                 loss_roi = F.mse_loss(pred_roi, target_roi)
                 loss_cvr = F.mse_loss(pred_cvr, target_cvr)
                 l_glob_batch = 0.01 * loss_roi + loss_cvr
@@ -125,7 +115,7 @@ def evaluate(model, loader, lambda_loss, threshold):
     # Metric Calculation
     auc, f1, mae_roi, rmse_roi, mae_cvr, rmse_cvr = 0.5, 0.0, 0.0, 0.0, 0.0, 0.0
     if len(p_ictr_all) > 0:
-        p_ictr_all = np.nan_to_num(p_ictr_all, nan=0.5) # 将 NaN 替换为中性预测 0.5
+        p_ictr_all = np.nan_to_num(p_ictr_all, nan=0.5)
         t_bin = (np.array(t_ictr_all) > threshold).astype(int)
         if len(np.unique(t_bin)) > 1:
             auc = roc_auc_score(t_bin, p_ictr_all)
