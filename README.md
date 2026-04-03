@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 ### 1. Download Pre-trained Models
 
-- **Swin-B**: 
+- **Swin-B**: [google-bert/bert-base-chinese](https://huggingface.co/google-bert/bert-base-chinese)
 - **BERT-base-chinese**: 
 - **Wav2Vec**:
 
