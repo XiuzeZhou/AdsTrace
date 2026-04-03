@@ -30,14 +30,10 @@ conda create -n torch_2.4 python=3.10
 conda activate torch_2.4
 ```
 
-3). Install dependencies
-**Torch** (torch>=2.4):
+3). Install dependencies (torch>=2.4):
 ```bash
-pip install torch==2.4.1 torchvision torchaudio tensorboard --index-url https://download.pytorch.org/whl/cu121
-```
+pip install torch==2.4.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
-**Others**
-```bash
 pip install -r requirements.txt
 ```
 
