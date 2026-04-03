@@ -16,19 +16,32 @@ This repository contains the dataset tools for **AdsTrace** benchmark dataset, a
 <img src="figures/framework.png" width="700">
 </p>
 
-## 🛠️ Installation
-```bash
-# Clone the repository
-git clone https://github.com/XiuzeZhou/AdsTrace.git
-cd AdsTrace
+## 🚀 Quick Start
 
-# Install dependencies
+### Create Environment
+
+1) Create Environment
+```bash
+conda create -n torch_2.4 python=3.10
+```
+
+2) Activate
+```bash
+conda activate torch_2.4
+```
+
+3) Install dependencies
+**Torch** (torch>=2.4):
+```bash
+pip install torch==2.4.1 torchvision torchaudio tensorboard --index-url https://download.pytorch.org/whl/cu121
+```
+
+**Others**
+```bash
 pip install -r requirements.txt
 ```
 
-## 🚀 Quick Start
-
-### 1. Data Preparation
+### 2. Data Preparation
 
 #### Dataset
 1) Download the **AdsTrace** dataset from Hugging Face: https://huggingface.co/datasets/Xiuze/AdsTrace
@@ -64,7 +77,7 @@ pip install -r requirements.txt
 │   └── wav2vec2-large-xlsr-53-chinese-zh-cn/
 ```
 
-### 2. Training
+### 3. Training
 To train TAMAN with the optimal parameters:
 ```bash
 ./sun.sh
@@ -75,7 +88,7 @@ or
 ```bash
 python main.py --exp_name TAMAN_Final --batch_size 8 --lr 1e-5 --lambda_loss 10.0 --num_layers 2
 ```
-### 3. Visualization
+### 4. Visualization
 Generate case studies (Acoustic-Textual Alignment) for the test set:
 ```bash
 python visualize_inference.py --exp_name TAMAN_Final --num_cases 5
