@@ -35,18 +35,18 @@ pip install -r requirements.txt
 - **Wav2Vec**: [jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn](https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn)
 
 Place the pre-trained models (Swin-B, BERT-base-chinese, Wav2Vec 2.0) in ./pretrained_models/ 
-```
-├── pretrained_models/
-|   ├── bert-base-chinese/
-│   ├── swin_base_patch4_window7_224/
-│   └── wav2vec2-large-xlsr-53-chinese-zh-cn/
-```
 
-### 2. Data Preparation
+
+### 1. Data Preparation
+
+#### Dataset
+1) Download the **AdsTrace** dataset from [Hugging Face](https://huggingface.co/)
 
 **AdsTrace** dataset: https://huggingface.co/datasets/Xiuze/AdsTrace
 
-Obtain data from Huggingface and organize your dataset:
+2) Unzip the .zip files
+
+3) Organize the data as follows:
 ```
 ├── datasets/AdsTrace/
 |   ├── audios_16k/
@@ -59,19 +59,32 @@ Obtain data from Huggingface and organize your dataset:
 │   └── split.json
 ```
 
-### 3. Training
+#### Pre-trained Models
+
+1) Download the pretrained models (Swin, BERT, Wav2Vec) [Hugging Face](https://huggingface.co/)
+
+2) Organize the data as follows:
+```
+├── pretrained_models/
+|   ├── bert-base-chinese/
+│   ├── swin_base_patch4_window7_224/
+│   └── wav2vec2-large-xlsr-53-chinese-zh-cn/
+```
+
+### 2. Training
 To train TAMAN with the optimal parameters:
 ```bash
 
 ```
 
-### 4. Visualization
+### 3. Visualization
 Generate case studies (Acoustic-Textual Alignment) for the test set:
 ```bash
 python visualize_inference.py --exp_name TAMAN_Final --num_cases 5
 ```
 
 ## 📝 Citation
+If you find our work useful in your research, please consider citing:
 ```
 
 ```
