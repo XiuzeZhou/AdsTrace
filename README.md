@@ -6,12 +6,12 @@
 
 This repository contains the dataset tools for **AdsTrace** benchmark dataset, and the implementation of **TAMAN**. TAMAN aligns hierarchical marketing metadata (Text + Audio) with temporal visual tokens to predict second-by-second engagement (iCTR) and global business metrics (ROI/CVR).
 
-## AdsTrace Dataset
+## 💎AdsTrace Dataset
 <p align="center">
 <img src="figures/annotation.png" width="700">
 </p>
 
-## TAMAN Framework
+## 🧠TAMAN Framework
 <p align="center">
 <img src="figures/framework.png" width="700">
 </p>
@@ -26,7 +26,7 @@ cd AdsTrace
 pip install -r requirements.txt
 ```
 
-## 📊 Quick Start
+## 🚀 Quick Start
 
 ### 1. Data Preparation
 
