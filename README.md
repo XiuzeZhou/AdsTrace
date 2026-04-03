@@ -6,6 +6,16 @@
 
 This repository contains the dataset tools for **AdsTrace** benchmark dataset, and the implementation of **TAMAN**. TAMAN aligns hierarchical marketing metadata (Text + Audio) with temporal visual tokens to predict second-by-second engagement (iCTR) and global business metrics (ROI/CVR).
 
+## AdsTrace Dataset
+<p align="center">
+<img src="figures/annotation.png" width="700">
+</p>
+
+## TAMAN Framework
+<p align="center">
+<img src="figures/framework.png" width="700">
+</p>
+
 ## 🛠️ Installation
 ```bash
 # Clone the repository
@@ -20,9 +30,9 @@ pip install -r requirements.txt
 
 ### 1. Download Pre-trained Models
 
-- **Swin-B**: [google-bert/bert-base-chinese](https://huggingface.co/google-bert/bert-base-chinese)
-- **BERT-base-chinese**: 
-- **Wav2Vec**:
+- **Swin-B**: [timm/swin_base_patch4_window7_224.ms_in1k](https://huggingface.co/timm/swin_base_patch4_window7_224.ms_in1k)
+- **BERT-base-chinese**: [google-bert/bert-base-chinese](https://huggingface.co/google-bert/bert-base-chinese)
+- **Wav2Vec**: [jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn](https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn)
 
 Place the pre-trained models (Swin-B, BERT-base-chinese, Wav2Vec 2.0) in ./pretrained_models/ 
 ```
@@ -49,3 +59,11 @@ Obtain data from Huggingface and organize your dataset:
 │   └── split.json
 ```
 
+### 3. Training
+
+
+### 4. Visualization
+Generate case studies (Acoustic-Textual Alignment) for the test set:
+```bash
+python visualize_inference.py --exp_name TAMAN_Final --num_cases 5
+```
