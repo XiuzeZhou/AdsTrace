@@ -28,15 +28,6 @@ pip install -r requirements.txt
 
 ## 📊 Quick Start
 
-### 1. Download Pre-trained Models
-
-- **Swin-B**: [timm/swin_base_patch4_window7_224.ms_in1k](https://huggingface.co/timm/swin_base_patch4_window7_224.ms_in1k)
-- **BERT-base-chinese**: [google-bert/bert-base-chinese](https://huggingface.co/google-bert/bert-base-chinese)
-- **Wav2Vec**: [jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn](https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn)
-
-Place the pre-trained models (Swin-B, BERT-base-chinese, Wav2Vec 2.0) in ./pretrained_models/ 
-
-
 ### 1. Data Preparation
 
 #### Dataset
@@ -62,6 +53,10 @@ Place the pre-trained models (Swin-B, BERT-base-chinese, Wav2Vec 2.0) in ./pretr
 #### Pre-trained Models
 
 1) Download the pretrained models (Swin, BERT, Wav2Vec) [Hugging Face](https://huggingface.co/)
+
+- **Swin-B**: [timm/swin_base_patch4_window7_224.ms_in1k](https://huggingface.co/timm/swin_base_patch4_window7_224.ms_in1k)
+- **BERT-base-chinese**: [google-bert/bert-base-chinese](https://huggingface.co/google-bert/bert-base-chinese)
+- **Wav2Vec**: [jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn](https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn)
 
 2) Organize the data as follows:
 ```
