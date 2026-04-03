@@ -60,10 +60,25 @@ Obtain data from Huggingface and organize your dataset:
 ```
 
 ### 3. Training
+To train TAMAN with the optimal parameters:
+```bash
 
+```
 
 ### 4. Visualization
 Generate case studies (Acoustic-Textual Alignment) for the test set:
 ```bash
 python visualize_inference.py --exp_name TAMAN_Final --num_cases 5
 ```
+
+## 📝 Citation
+```
+
+```
+
+## 📄 License
+
+- **Dataset**: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+- **Code**: [Apache 2.0](https://www.google.com/search?q=LICENSE)
+
