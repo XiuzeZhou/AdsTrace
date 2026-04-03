@@ -99,10 +99,11 @@ class AdsTraceDataset(Dataset):
         frames = torch.stack(frames)
 
         speech = self.audio_cache[vid]
-
-        meta = f"{target_row['视频特点']} {target_row['主播']} {target_row['剪辑技术']} {target_row['促销活动']}"
+        
+        # video type: 视频特点, streamer: 主播, editing techniques: 剪辑技术, promotional mechanisms: 促销活动
+        meta = f"{target_row['视频特点']} {target_row['主播']} {target_row['剪辑技术']} {target_row['促销活动']}" # "video type" "streamer" "editing techniques" "promotional mechanisms"
         transcript = json.load(open(os.path.join(self.root_dir, f"transcripts/{vid}.json"), encoding='utf-8'))['full_text']
-        full_text = f"Meta: {meta} [SEP] Transcript: {transcript} [SEP] Description: {self.product_lookup.get(target_row['商品名字'], '')}"
+        full_text = f"Meta: {meta} [SEP] Transcript: {transcript} [SEP] Description: {self.product_lookup.get(target_row['商品名字'], '')}" # product name: 商品名字
         text_tokens = self.tokenizer(full_text, padding='max_length', max_length=512, truncation=True, return_tensors="pt")
 
         return {
