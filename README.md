@@ -31,9 +31,7 @@ pip install -r requirements.txt
 ### 1. Data Preparation
 
 #### Dataset
-1) Download the **AdsTrace** dataset from [Hugging Face](https://huggingface.co/)
-
-**AdsTrace** dataset: https://huggingface.co/datasets/Xiuze/AdsTrace
+1) Download the **AdsTrace** dataset from [Hugging Face](https://huggingface.co/): https://huggingface.co/datasets/Xiuze/AdsTrace
 
 2) Unzip the .zip files
 
