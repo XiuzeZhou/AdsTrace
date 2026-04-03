@@ -68,12 +68,6 @@ class EarlyStopping:
 
 
 def log_experiment_results(args, metrics, file_path='outputs/summary_results.csv'):
-    """
-    将实验配置和最终测试结果保存到 CSV 文件中
-    args: 命令行参数对象
-    metrics: 字典，包含 AUC, MAE 等指标
-    """
-    # 准备表头和数据
     header = [
         'timestamp', 'exp_name', 'lr', 'lambda_loss', 'hidden_size', 
         'num_layers', 'batch_size', 'test_auc', 'test_f1', 
