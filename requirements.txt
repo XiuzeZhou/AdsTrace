@@ -1,0 +1,25 @@
+# --- Core Deep Learning (Installed separately via CUDA index) ---
+# torch==2.4.1
+# torchvision
+# torchaudio
+tensorboard
+
+# --- NLP & Audio ---
+transformers==4.40.2
+jieba
+soundfile
+
+# --- Computer Vision ---
+timm
+opencv-python==4.9.0.80
+Pillow
+
+# --- Data Science & Visualization ---
+numpy==1.26.4
+pandas
+scikit-learn
+matplotlib
+seaborn
+
+# --- Utilities ---
+tqdm
