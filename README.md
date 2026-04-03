@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ### 1. Data Preparation
 
 #### Dataset
-1) Download the **AdsTrace** dataset from [Hugging Face](https://huggingface.co/): https://huggingface.co/datasets/Xiuze/AdsTrace
+1) Download the **AdsTrace** dataset from Hugging Face: https://huggingface.co/datasets/Xiuze/AdsTrace
 
 2) Unzip the .zip files
 
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 #### Pre-trained Models
 
-1) Download the pretrained models (Swin, BERT, Wav2Vec) [Hugging Face](https://huggingface.co/)
+1) Download the pretrained models (Swin, BERT, Wav2Vec) Hugging Face
 
 - **Swin-B**: [timm/swin_base_patch4_window7_224.ms_in1k](https://huggingface.co/timm/swin_base_patch4_window7_224.ms_in1k)
 - **BERT-base-chinese**: [google-bert/bert-base-chinese](https://huggingface.co/google-bert/bert-base-chinese)
