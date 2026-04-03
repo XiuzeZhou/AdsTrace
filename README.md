@@ -9,7 +9,7 @@ This repository contains the dataset tools for **AdsTrace** benchmark dataset, a
 ## 🛠️ Installation
 ```bash
 # Clone the repository
-git clone [https://github.com/XiuzeZhou/AdsTrace.git](https://github.com/XiuzeZhou/AdsTrace.git)
+git clone https://github.com/XiuzeZhou/AdsTrace.git
 cd AdsTrace
 
 # Install dependencies
@@ -17,5 +17,35 @@ pip install -r requirements.txt
 ```
 
 ## 📊 Quick Start
-### 1. Data Preparation
-Place the pre-trained models (Swin-B, BERT-base-chinese, Wav2Vec 2.0) in ./pretrained_models/ and organize your dataset:
+
+### 1. Download Pre-trained Models
+
+- **Swin-B**: 
+- **BERT-base-chinese**: 
+- **Wav2Vec**:
+
+Place the pre-trained models (Swin-B, BERT-base-chinese, Wav2Vec 2.0) in ./pretrained_models/ 
+```
+├── pretrained_models/
+|   ├── bert-base-chinese/
+│   ├── swin_base_patch4_window7_224/
+│   └── wav2vec2-large-xlsr-53-chinese-zh-cn/
+```
+
+### 2. Data Preparation
+
+**AdsTrace** dataset: https://huggingface.co/datasets/Xiuze/AdsTrace
+
+Obtain data from Huggingface and organize your dataset:
+```
+├── datasets/AdsTrace/
+|   ├── audios_16k/
+│   ├── frames/
+│   ├── ictr/
+│   ├── transcripts/
+│   ├── products_cn.json
+│   ├── products_en.json
+│   ├── tags_cn.csv
+│   └── split.json
+```
+
