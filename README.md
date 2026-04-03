@@ -8,7 +8,7 @@ This repository contains the dataset tools for [**AdsTrace**](https://huggingfac
 
 ## 💎AdsTrace Dataset
 <p align="center">
-<img src="figures/annotation.png" width="700">
+<img src="figures/adstrace.png" width="700">
 </p>
 
 ## 🧠TAMAN Framework
