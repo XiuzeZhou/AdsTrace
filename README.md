@@ -67,9 +67,14 @@ pip install -r requirements.txt
 ### 2. Training
 To train TAMAN with the optimal parameters:
 ```bash
-
+./sun.sh
 ```
 
+or
+
+```bash
+python main.py --exp_name TAMAN_Final --batch_size 8 --lr 1e-5 --lambda_loss 10.0 --num_layers 2
+```
 ### 3. Visualization
 Generate case studies (Acoustic-Textual Alignment) for the test set:
 ```bash
